@@ -6,7 +6,7 @@ Tailor-made for macOS systems taking advantage of highly efficient `kqueue` for 
 ## Architecture
 - **Network Layer:** Leverages `kqueue` and fully non-blocking I/O.
 - **Parser:** Zero-allocation custom parser translating RESP arrays without overhead.
-- **Storage Core:** Backed by `std::unordered_map` with `std::shared_mutex` providing extremely fast read queries with minimal contention.
+- **Storage Core:** Backed by `std::unordered_map` with `std::shared_timed_mutex` providing extremely fast read queries with minimal contention.
 - **TTL Eviction:** Min-Heap based background thread accurately scheduling TTL operations using modern C++ `<chrono>` routines.
 
 ## Performance
